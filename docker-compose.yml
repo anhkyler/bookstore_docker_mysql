@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'hieu'
+      MYSQL_PASSWORD: 'test'
+      MYSQL_DATABASE: 'bookstore'
+      MYSQL_ROOT_HOST: '0.0.0.0'
+    expose:
+      - '3306'
